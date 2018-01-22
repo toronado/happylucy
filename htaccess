@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/lucy/.*$
+RewriteRule ^(.*)$ /lucy/public/$1 [L]

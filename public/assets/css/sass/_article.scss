@@ -1,0 +1,65 @@
+article {
+    //text-align: justify;
+    padding: 4rem 0;
+    h1 {
+        margin-bottom: 1em;
+    }
+    p {
+        margin-bottom: 2em;
+        &.lead {
+            @include rem(font-size, 20px);
+            margin-bottom: 1em;
+            color: $dark;
+            font-weight: inherit;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    a {
+        background-color: $highlight;
+        &:hover {
+            //background-color: rgba(125, 255, 225, 1);
+            background-color: #7affa6;
+        }
+    }
+    figure {
+        position: relative;
+        @media (min-width: 1200px) {
+            &.left {
+                float: left;
+                width: 75%;
+                margin-left: -25%;
+                margin-right: 2.5rem;
+            }
+            &.right {
+                float: right;
+                width: 75%;
+                margin-right: -25%;
+                margin-left: 2.5rem;
+            }
+        }
+        figcaption {
+            position: absolute;
+            bottom: 0;
+            padding: .5em 1em;
+            background-color: rgba(0, 0, 0, .5);
+        }
+        img {
+            width: 100%;
+        }
+    }
+    .video-responsive{
+        overflow:hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+        iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+    }
+}

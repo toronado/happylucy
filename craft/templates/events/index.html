@@ -1,0 +1,29 @@
+{% extends "_layouts/site" %}
+{% block main %}
+    <section class="events">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="card-deck">
+                	{% for entry in craft.entries.section('events') %}
+                        <div class="card bg-dark text-white">
+                            {% set data = entry.article.type('hero').first() %}
+                            {% if not data %}
+                                {% set data = entry.article.type('image').first() %}
+                            {% endif %}
+                            <img class="card-img" src="{{ data.image[0].getUrl('thumb') }}" alt="">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                <div>
+                                    <h1 class="card-title">{{ entry.title }}</h1>
+                                    <p class="card-text">{{ data.subheading }}</p>
+                                    <a href="{{ entry.url }}" class="btn">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                	{% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,12 @@
+#footer {
+    //background-color: $dark;
+    text-align: center;
+    padding: 5rem 0;
+    p {
+        color: lighten($dark, 30%);
+        @include rem(font-size, 12px);
+    }
+    a {
+        color: $dark;
+    }
+}
